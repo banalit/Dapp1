@@ -1,0 +1,37 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Package",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}"
+        },
+        {
+            "name": "Run Current Go File", 
+            "type": "go",
+            "request": "launch",
+            "mode": "auto", 
+            "program": "${file}", 
+            "env": {"GOPROXY": "https://goproxy.cn"},
+            "args": [], 
+            "showLog": true 
+        },
+        {
+            "name": "Remote Debug Go",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "remotePath": "/home/luke/projects/Dapp1", // 远程服务器上的项目路径
+            "port": 2345, // 调试端口（需和远程 dlv 启动端口一致）
+            "host": "192.168.110.103", // 远程服务器 IP
+            "program": "${workspaceFolder}", // 本地项目路径
+            "env": {},
+            "args": []
+        }
+    ]
+}
